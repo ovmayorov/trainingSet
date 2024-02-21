@@ -30,6 +30,20 @@ public class Main {
         return false;
     }
     // ===========================================================
+    /*
+    public static boolean hasUniqueChars(String string) {
+        Set<Character> charSet = new HashSet<>();
+
+        for (char ch : string.toCharArray()) {
+            if (charSet.contains(ch)) {
+                return false;
+            }
+            charSet.add(ch);
+        }
+
+        return true;
+    }
+     */
 
     public static void main(String[] args) {
 
