@@ -1,8 +1,5 @@
 package org.example;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -45,6 +42,23 @@ public class Main {
     }
      */
 
+    //===================================
+    public static List<int[]> findPairs(int[] arr1, int[] arr2, int target){
+        List<int[]> res = new ArrayList<>();
+
+        Set<Integer> firstArr = new HashSet<>();
+        for(int i = 0; i < arr1.length; i++){
+            firstArr.add(arr1[i]);
+        }
+        for(int i = 0; i < arr2.length; i++) {
+            if (firstArr.contains(target - arr2[i])){
+                res.add(new int[]{target - arr2[i], arr2[i]});
+            }
+        }
+        return res;
+    }
+    //===================================
+
     public static void main(String[] args) {
 
         System.out.printf("Training to use Set\n");
@@ -75,6 +89,24 @@ public class Main {
             true
             true
             false
+
+        */
+        System.out.println();
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {2, 4, 6, 8, 10};
+        int target = 7;
+
+        List<int[]> pairs = findPairs(arr1, arr2, target);
+        for (int[] pair : pairs) {
+            System.out.println(Arrays.toString(pair));
+        }
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            [5, 2]
+            [3, 4]
+            [1, 6]
 
         */
         
